@@ -3,67 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой путь в Python</title>
-    
-    <!-- Подключение Bootstrap через правильный CDN -->
-    <link href="https://jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Оглавление | Python после 1С</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+        }
+
+        header {
+            margin-bottom: 32px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        header p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        /* Список уроков (Оглавление) */
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .nav-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 22px 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-2px);
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+        }
+
+        .nav-card-content h2 {
+            font-size: 1.2rem;
+            color: #2563eb;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .nav-card-content p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .nav-arrow {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: bold;
+            padding-left: 16px;
+            transition: color 0.15s ease;
+        }
+
+        .nav-card:hover .nav-arrow {
+            color: #2563eb;
+        }
+
+        /* Метки статуса */
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .badge-done { background: #dcfce7; color: #15803d; }
+        .badge-soon { background: #f1f5f9; color: #64748b; }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            background: #ffffff;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 480px) {
+            .wrapper { padding: 20px 12px; }
+            .nav-card { padding: 16px; }
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
 
-    <!-- Навигационная панель (Шапка сайта) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">🐍 Изучение Python после 1С</a>
-        </div>
-    </nav>
+    <div class="wrapper">
+        <header>
+            <h1>🐍 Python после 1С: Индекс конспекта</h1>
+            <p>Путеводитель по материалам, аналогиям и коду.</p>
+        </header>
 
-    <!-- Основной контент страницы -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                
-                <!-- Приветственный блок -->
-                <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
-                    <h1 class="display-5 fw-bold text-success">Мой личный гитхаб-конспект</h1>
-                    <p class="col-md-8 fs-4 text-muted">Фиксирую здесь самые интересные абстракции, аналогии с 1С и важные шаги в программировании.</p>
-                    <hr class="my-4">
-                    <a class="btn btn-primary btn-lg" href="https://github.io" target="_blank">Перейти на сайт</a>
+        <main class="nav-list">
+            <!-- Ссылка на Урок 1 -->
+            <a href="lessons/lesson1-oop-basics.html" class="nav-card">
+                <div class="nav-card-content">
+                    <span class="badge badge-done">Готово</span>
+                    <h2>Урок 1. Почему ООП в Python проще, чем кажется</h2>
+                    <p>Разбираем классы и свойства через призму объектов метаданных и реквизитов 1С.</p>
                 </div>
+                <div class="nav-arrow">&rarr;</div>
+            </a>
 
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <!-- Карточка 1: Алгоритмы -->
-            <div class="col-md-6">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">🧠 Этап 1: Базовый синтаксис</h5>
-                        <p class="card-text">Здесь я разбираю циклы, условия и структуры данных. Всё очень похоже на встроенный язык 1С.</p>
-                        <span class="badge bg-secondary">В процессе</span>
-                    </div>
+            <!-- Ссылка на Урок 2 -->
+            <a href="lessons/lesson2-collections.html" class="nav-card">
+                <div class="nav-card-content">
+                    <span class="badge badge-soon">В планах</span>
+                    <h2>Урок 2. Структуры данных и коллекции</h2>
+                    <p>Списки и словари Python как аналоги массивов и структур в 1С.</p>
                 </div>
-            </div>
+                <div class="nav-arrow">&rarr;</div>
+            </a>
 
-            <!-- Карточка 2: ООП -->
-            <div class="col-md-6">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">🧱 Этап 2: Объектная модель</h5>
-                        <p class="card-text">Классы, объекты, методы и свойства. Проводим параллели с метаданными и модулями объектов.</p>
-                        <span class="badge bg-warning text-dark">План</span>
-                    </div>
+            <!-- Ссылка на Урок 3 -->
+            <a href="lessons/lesson3-syntax.html" class="nav-card">
+                <div class="nav-card-content">
+                    <span class="badge badge-soon">В планах</span>
+                    <h2>Урок 3. Базовые алгоритмы и циклы</h2>
+                    <p>Переводим конструкции Если/Тогда и Циклы в синтаксис Python.</p>
                 </div>
-            </div>
-        </div>
+                <div class="nav-arrow">&rarr;</div>
+            </a>
+        </main>
     </div>
 
-    <!-- Подвал сайта -->
-    <footer class="text-center text-muted py-4 mt-5 border-top">
-        <p>&copy; 2026. Сделано с помощью Python и Bootstrap.</p>
+    <footer>
+        <p>&copy; 2026. GitHub Pages Конспект.</p>
     </footer>
 
-    <!-- Подключение JS-скриптов Bootstrap (нужно для работы выпадающих списков, модальных окон и т.д.) -->
-    <script src="https://jsdelivr.net" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
