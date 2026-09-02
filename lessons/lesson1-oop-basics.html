@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 1. Почему ООП в Python проще, чем кажется</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .wrapper {
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+        }
+
+        /* Навигация назад */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            transition: color 0.15s ease;
+        }
+
+        .back-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* Шапка урока */
+        header {
+            margin-bottom: 32px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 20px;
+        }
+
+        .lesson-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* Карточки контента */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            margin-bottom: 14px;
+            color: #334155;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Блоки кода */
+        pre {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, "Andale Mono", monospace;
+            font-size: 0.88rem;
+            margin: 16px 0;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: Consolas, Monaco, monospace;
+            background-color: #f1f5f9;
+            color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.88rem;
+        }
+
+        pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* Таблицы */
+        .table-container {
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        /* Подвал */
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            background: #ffffff;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 480px) {
+            .wrapper { padding: 20px 12px; }
+            .card { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Кнопка возврата в корень (на главную страницу index.html) -->
+        <a href="../index.html" class="back-link">&larr; Назад к оглавлению</a>
+
+        <header>
+            <div class="lesson-meta">Урок 1 • Объектная модель</div>
+            <h1>Почему ООП в Python проще, чем кажется</h1>
+        </header>
+
+        <main>
+            <!-- Блок 1: Основная мысль -->
+            <article class="card">
+                <h2>Главная аналогия: Метаданные 1С vs Классы Python</h2>
+                <p>Вместо абстрактных примеров с «животными» из учебников, мы используем архитектурный подход 1С. Когда вы создаете справочник в Конфигураторе, вы по сути описываете чертеж сущности. В Python класс выполняет ровно ту же роль.</p>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>В 1С:Предприятии</th>
+                                <th>В Python</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Объект метаданных</td>
+                                <td>Класс (<code>class</code>)</td>
+                            </tr>
+                            <tr>
+                                <td>Реквизит (Код, ИНН)</td>
+                                <td>Атрибут экземпляра</td>
+                            </tr>
+                            <tr>
+                                <td>Модуль объекта (Процедуры)</td>
+                                <td>Методы класса (<code>def</code>)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <!-- Блок 2: Пример кода -->
+            <article class="card">
+                <h2>Пример: Защита данных (Инкапсуляция)</h2>
+                <p>В 1С логику проверки данных мы пишем в обработчике <code>ПередЗаписью()</code>. В Python мы инкапсулируем логику внутрь методов класса, чтобы никто не мог изменить важные свойства напрямую:</p>
+                
+                <pre><code>class Wallet:
+    def __init__(self):
+        self.__balance = 0  # Скрытое свойство (приватный атрибут)
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Сумма должна быть положительной!")</code></pre>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026. Конспект Python после 1С.</p>
+    </footer>
+
+</body>
+</html>
